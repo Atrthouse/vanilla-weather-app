@@ -25,16 +25,17 @@ function lastUpdated(timestamp) {
 }
 
 function showTemp(response) {
-  let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let weatherStatusElement = document.querySelector("#weatherStatus");
   let humidity = document.querySelector("#humidity");
   let wind = document.querySelector("#wind");
   let dateElement = document.querySelector("#lastUpdated");
-  iconElement = document.querySelector("#icon");
+  let iconElement = document.querySelector("#icon");
 
-  temperatureElement.innerHTML = Math.round(temperature);
+  celsiusTempearture = response.data.main.temp;
+
+  temperatureElement.innerHTML = Math.round(celsiusTempearture);
   cityElement.innerHTML = response.data.name;
   weatherStatusElement.innerHTML = response.data.weather[0].description;
   humidity.innerHTML = response.data.main.humidity;
@@ -60,7 +61,30 @@ function handleSubmit(event) {
   search(cityInputElement.value);
 }
 
-search("Prague");
-
 let cityForm = document.querySelector("#search-form");
 cityForm.addEventListener("submit", handleSubmit);
+
+function convertToFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemperature = (celsiusTempearture * 9) / 5 + 32;
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+}
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", convertToFahrenheit);
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTempearture);
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
+}
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", convertToCelsius);
+
+let celsiusTempearture = null;
+
+search("Prague");

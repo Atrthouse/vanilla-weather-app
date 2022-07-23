@@ -38,6 +38,19 @@ li::first-letter {
   top: -32px;
 }
 
+.weather-temperature a {
+  text-decoration: none;
+}
+
+.weather-temperature .active {
+  color: rgb(53, 72, 117);
+  cursor: default;
+}
+
+.weather-temperature .active:hover {
+  text-decoration: none;
+}
+
 #city {
   color: rgb(53, 72, 117);
   display: block;
