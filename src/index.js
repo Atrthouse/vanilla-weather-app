@@ -41,15 +41,15 @@ function showTemp(response) {
   humidity.innerHTML = response.data.main.humidity;
   wind.innerHTML = Math.round(response.data.wind.speed);
   dateElement.innerHTML = lastUpdated(response.data.dt * 1000);
-  iconElement.changeAtribute(
+  iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
-  icon.cityElement.changeAtribute("alt", response.data.weather[0].description);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 
 let apiKey = "2f476bb43932e1e399e2a6ea6510f337";
-let chosenCity = "Prague";
+let chosenCity = "Rome";
 let units = "metric";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${chosenCity}&units=${units}&appid=${apiKey}`;
 
