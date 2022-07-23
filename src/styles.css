@@ -24,6 +24,11 @@ li::first-letter {
   border-radius: 5px;
   box-shadow: 2px 2px 3px rgb(191, 191, 191);
   font-family: "Neucha", cursive;
+  background: linear-gradient(
+    359.3deg,
+    rgb(196, 214, 252) 1%,
+    rgba(187, 187, 187, 0) 70.9%
+  );
 }
 
 .weather-temperature img {
@@ -43,7 +48,7 @@ li::first-letter {
 }
 
 .weather-temperature .active {
-  color: rgb(53, 72, 117);
+  color: black;
   cursor: default;
 }
 
