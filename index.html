@@ -28,29 +28,37 @@
 
   <body>
     <div class="container">
-      <div class="weather-app">
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="weather-icon"
-            />
-            <span id="temperature">25</span>
-            <a href="#">°C</a>|
-            <a href="#">°F</a>
-
-            <ul>
-              <li>Precipitation: <span id="precipitation">14</span>%</li>
-              <li>Humidity: <span id="humidity">61</span>%</li>
-              <li>Wind: <span id="wind">16</span> km/h</li>
-            </ul>
-          </div>
-          <div class="col-6">
-            <div id="city">Prague</div>
-            <ul>
-              <li id="lastUpdated">Last updated: Saturday 20:25</li>
-              <li id="weatherStatus">Clear</li>
-            </ul>
+      <div class="weather-app-wrapper">
+        <div class="weather-app">
+          <div class="row">
+            <div class="col-6">
+              <div class="d-flex weather-temperature">
+                <img
+                  src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                  alt="weather-icon"
+                  class="d-flex"
+                />
+                <div class="float-left">
+                  <span id="temperature">25</span>
+                  <span class="units">
+                    <a href="#">°C</a>|
+                    <a href="#">°F</a>
+                  </span>
+                </div>
+              </div>
+              <ul>
+                <li>Precipitation: <span id="precipitation">14</span>%</li>
+                <li>Humidity: <span id="humidity">61</span>%</li>
+                <li>Wind: <span id="wind">16</span> km/h</li>
+              </ul>
+            </div>
+            <div class="col-6">
+              <div id="city">Prague</div>
+              <ul>
+                <li id="lastUpdated">Last updated: Saturday 20:25</li>
+                <li id="weatherStatus">Clear</li>
+              </ul>
+            </div>
           </div>
         </div>
         <small>
