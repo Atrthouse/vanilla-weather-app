@@ -24,8 +24,44 @@
     ></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
+
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <div class="project">
+        <div class="row">
+          <div class="col-6">
+            <img
+              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+              alt="weather-icon"
+            />
+            <span id="temperature">25</span>
+            <a href="#">°C</a>|
+            <a href="#">°F</a>
+
+            <ul>
+              <li>Precipitation: <span id="precipitation">14</span>%</li>
+              <li>Humidity:<span id="humidity">61</span>%</li>
+              <li>Wind:<span id="wind">16</span>km/h</li>
+            </ul>
+          </div>
+          <div class="col-6">
+            <div id="city">Prague</div>
+            <ul>
+              <li id="lastUpdated">Last updated: Saturday 20:25</li>
+              <li id="weatherStatus">Clear</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <small>
+        <a
+          href="https://github.com/Atrthouse/vanilla-weather-app"
+          target="_blank"
+          >Open source code</a
+        >
+        by Julia Baranovska
+      </small>
+    </div>
     <script src="src/index.js"></script>
   </body>
 </html>
