@@ -24,6 +24,34 @@ function lastUpdated(timestamp) {
   return `${day}  |  ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+        <div class="col-2">
+          <div class="weather-forecast-day">${day}</div>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+            alt=""
+            width="35"
+            />
+            <div class="weather-forecast-temperature">
+              <span class="weather-forecast-temperature-max">20</span>
+              <span class="weather-forecast-temperature-min">16</span>
+            </div>
+          </div>
+          `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function showTemp(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -88,3 +116,4 @@ celsius.addEventListener("click", convertToCelsius);
 let celsiusTempearture = null;
 
 search("Prague");
+displayForecast();
