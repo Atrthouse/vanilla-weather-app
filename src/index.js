@@ -70,8 +70,6 @@ function displayForecast(response) {
 }
 
 function getForecast(coordinates) {
-  console.log(coordinates);
-
   let apiKey = "2f476bb43932e1e399e2a6ea6510f337";
   let units = "metric";
   //let apiURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=${units}&appid=${apiKey}`;
@@ -103,7 +101,6 @@ function showTemp(response) {
   iconElement.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
-  console.log(response.data.coord);
 }
 
 function search(city) {

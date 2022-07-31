@@ -90,3 +90,7 @@ li::first-letter {
   font-weight: 400;
   line-height: 1;
 }
+
+.col-sm-offset-1 {
+  margin-top: 30px;
+}
