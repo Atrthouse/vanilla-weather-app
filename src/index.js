@@ -52,6 +52,16 @@ function displayForecast() {
   forecastElement.innerHTML = forecastHTML;
 }
 
+function getForecast(coordinates) {
+  console.log(coordinates);
+
+  let apiKey = "2f476bb43932e1e399e2a6ea6510f337";
+  let units = "metric";
+  //let apiURL = `https://api.openweathermap.org/data/3.0/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=${units}&appid=${apiKey}`;
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  axios.get(apiURL).then(displayForecast);
+}
+
 function showTemp(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
@@ -74,6 +84,9 @@ function showTemp(response) {
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
+  console.log(response.data.coord);
 }
 
 function search(city) {
@@ -116,4 +129,3 @@ celsius.addEventListener("click", convertToCelsius);
 let celsiusTempearture = null;
 
 search("Prague");
-displayForecast();
