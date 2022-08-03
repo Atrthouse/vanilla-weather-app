@@ -88,6 +88,10 @@ function showTemp(response) {
 
   celsiusTempearture = response.data.main.temp;
 
+  document.querySelector("#temperature").innerHTML = `${temperatureElement}`;
+  fahrenheit.classList.remove("active");
+  celsius.classList.add("active");
+
   temperatureElement.innerHTML = Math.round(celsiusTempearture);
   cityElement.innerHTML = response.data.name;
   weatherStatusElement.innerHTML = response.data.weather[0].description;
